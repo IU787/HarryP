@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<style type="text/css">
+		html{
+			height: 100%;
+		}
+		@font-face{
+			src:url(10467.ttf);
+			font-family: my-font;
+		}
+		body{
+			font-family: my-font;
+			color: white;
+			
+		}
+		.player {
+			height: 200px;
+			position: absolute;
+			top:35%;
+			left: 40%;
+			transition:  1s;
+		}
+		.school {
+			position: absolute;
+			top:20%;
+			left: 60%
+		}
+		.school:hover {
+			-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
+		}
+		.vokzal {
+			top:60%;
+			position: absolute;
+			left:30%;
+		}
+		.vokzal:hover {
+			-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
+		}
+		.lavka {
+			position: absolute;
+			top:20%;
+			left: 20%;
+		}
+		.lavka:hover {
+			-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
+		}
+		.tip {
+			position: absolute;
+			top:46%;
+			left: 25%;
+
+		}
+		.top {
+			position: absolute;
+			top:60%;
+			left: 53%;
+			transform: rotate(50deg);
+		}
+		.logo {
+			position: absolute;
+			left: 32%;
+		}
+		.logo:hover {
+			-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
+		}
+		.loc1player {
+			width: 150px;
+			height: 200px;
+			position: absolute;
+			left: 45%;
+			top: 65%;
+			background-image: url(34567.png);
+			background-size: 100% 100%;
+		}
+		.loc1message {
+			height: 200px;
+			width: 300px;
+			position: absolute;
+			top: 5px;
+			left: 40%;
+			background-image: url(56.png);
+			background-size: 100% 100%;
+			color: black;
+			padding-top: 50px;
+			padding-left: 20px;
+		}
+		.pal1 {
+			height: 50px;
+			width: 200px;
+			position: absolute;
+			left: 10%;
+			top: 40%;
+			transition: 1s;
+			background-image: url(00.png);
+			background-size: 100% 100%;
+			-moz-box-shadow:0 0 30px #fff;
+			 -webkit-box-shadow:0 0 30px #fff;
+			  box-shadow:0 0 30px #fff;
+		}
+		.pal1:hover {
+			-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
+		}
+		.pal2 {
+			height: 50px;
+			width: 200px;
+			position: absolute;
+			left: 30%;
+			top: 40%;
+			transition: 1s;
+			background-image: url(12.png);
+			background-size: 100% 100%;
+			-moz-box-shadow:0 0 30px #fff;
+			 -webkit-box-shadow:0 0 30px #fff;
+			  box-shadow:0 0 30px #fff;
+		}
+		.pal2:hover {
+			-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
+		}
+		.pal3 {
+			height: 50px;
+			width: 200px;
+			position: absolute;
+			left: 50%;
+			top: 40%;
+			transition: 1s;
+			background-image: url(34.png);
+			background-size: 100% 100%;
+			-moz-box-shadow:0 0 30px #fff;
+			 -webkit-box-shadow:0 0 30px #fff;
+			  box-shadow:0 0 30px #fff;
+		}
+		.pal3:hover {
+			-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
+		}
+		.pal4 {
+			height: 50px;
+			width: 200px;
+			position: absolute;
+			left: 70%;
+			top: 40%;
+			transition: 1s;
+			background-image: url(95.png);
+			background-size: 100% 100%;
+			-moz-box-shadow:0 0 30px #fff;
+			 -webkit-box-shadow:0 0 30px #fff;
+			  box-shadow:0 0 30px #fff;
+		}
+		.pal4:hover {
+			-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
+		}
+		.letter {
+			position: absolute;
+			left: 40%;
+			top: 30%;
+			transition: 1s;
+		}
+		.letter:hover {
+			-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
+		}
+		.maintext {
+			padding-top: 20%;
+			text-align: center;
+			opacity: 0;
+			transition: 2s;
+		}
+		.maintext1 {
+			color: black;
+		}
+		.begin {
+			transition: 1s;
+		}
+		.loc2tx {
+			text-align: center;
+		}
+		.img {
+			height: 50px;
+			width: 150px;
+		}
+		.img22 {
+			height: 150px;
+			width: 150px;
+			border-radius: 50%;
+			border: 10px solid white;
+		}
+		.loc2img {
+			padding-left: 22%;
+			padding-top: 5%;
+		}
+		.loc2img2 {
+			padding-left: 10%;
+			padding-top: 5%;
+		}
+		.loc2img3 {
+			padding-left: 10%;
+			padding-top: 5%;
+		}
+		.boxes {
+			height: 60px;
+			width: 500px;
+			margin-right: auto;
+			margin-left: auto;
+			margin-top: 5%;
+			text-align: center;
+			border-radius: 30%;
+			background: #ffc261;
+			color: black;
+			font-size: 300%;
+    		background: linear-gradient(to bottom, #ff9d00, #ffffff);
+    		-moz-box-shadow:0 0 30px #fff;
+			-webkit-box-shadow:0 0 30px #fff;
+			box-shadow:0 0 30px #fff;
+		}
+		.loc3player {
+			height: 200px;
+			position: absolute;
+			top:35%;
+			left: 40%;
+			transition:  1s;
+			z-index: 200;
+		}
+		.door {
+			height: 100px;
+			position: absolute;
+			top:45%;
+			left: 50%;
+		}
+		.arpha {
+			height: 80px;
+			position: absolute;
+			top:20%;
+			left: 25%;
+		}
+		.lira {
+			height: 100px;
+			position: absolute;
+			top:55%;
+			left: 90%;
+		}
+		.violon {
+			height: 100px;
+			position: absolute;
+			top:50%;
+			left: 57%;
+		}
+		.mark11{
+              height: 80px;
+              width: 90px;
+              position: absolute;
+          }
+        .mark1{
+              height: 60px;
+              width: 90px;
+              position: absolute;
+          }
+        .door1 {
+        	height: 550px;
+        	position: absolute;
+        	left: 33%;
+        	top: 10%;
+        }
+        .mirror {
+        	height: 400px;
+        	position: absolute;
+        	left: 45%;
+        	top: 20%
+        }
+        .lord {
+        	height: 250px;
+        	position: absolute;
+        	left: 30%;
+        	top: 40%
+        }
+        .stone {
+        	height: 30px;
+        	position: absolute;
+        	left: 50%;
+        	top: 60%;
+        	opacity: 0;
+        	transition: 1s;
+        }
+        .maintext4 {
+        	text-align: center;
+        	color: white;
+        	padding-top: 15%
+        }
+        .pr {
+        	height: 300px;
+        	position: absolute;
+        	left: 30%;
+        	top: 30%;
+        	transition: 1s;
+        }
+        .maintext5 {
+        	color: white;
+        	text-align: center;
+        }
+        .textdiv {
+        	width: 400px;
+        	height: 200px;
+        	margin-left: 45%;
+        	margin-top: 20%;
+        	-moz-box-shadow:0 0 30px #fff;
+			 -webkit-box-shadow:0 0 30px #fff;
+			  box-shadow:0 0 30px #fff;
+        }
+        .textdiv:hover {
+			-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
+		}
+		.textdiv3 {
+        	width: 600px;
+        	height: 300px;
+        	margin-left: 35%;
+        	margin-top: 15%;
+        	-moz-box-shadow:0 0 30px #fff;
+			 -webkit-box-shadow:0 0 30px #fff;
+			  box-shadow:0 0 30px #fff;
+        }
+        .textdiv3:hover {
+			-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
+		}
+		.pr3 {
+        	height: 300px;
+        	position: absolute;
+        	left: 20%;
+        	top: 30%;
+        	transition: 1s;
+        }
+        .pr4 {
+        	height: 300px;
+        	position: absolute;
+        	left: 20%;
+        	top: 30%;
+        	transition: 1s;
+        }
+        .textdiv4 {
+        	width: 600px;
+        	height: 250px;
+        	margin-left: 35%;
+        	margin-top: 15%;
+        	-moz-box-shadow:0 0 30px #fff;
+			 -webkit-box-shadow:0 0 30px #fff;
+			  box-shadow:0 0 30px #fff;
+        }
+        .textdiv4:hover {
+			-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
+		}
+		.textdivpal {
+        	width: 250px;
+        	height: 100px;
+        	left: 43%;
+        	top: 50%;
+        	position: absolute;
+        	transition: 1s;
+        	opacity: 0;
+        }
+        .textdivpal2 {
+        	width: 250px;
+        	height: 100px;
+        	left: 43%;
+        	top: 50%;
+        	position: absolute;
+        	transition: 1s;
+        	opacity: 0;
+        }
+        .textdivpal3 {
+        	width: 250px;
+        	height: 100px;
+        	left: 43%;
+        	top: 50%;
+        	position: absolute;
+        	transition: 1s;
+        	opacity: 0;
+        }
+        .textdivpal4 {
+        	width: 250px;
+        	height: 100px;
+        	left: 43%;
+        	top: 50%;
+        	position: absolute;
+        	transition: 1s;
+        	opacity: 0;
+        }
+        .gerb {
+        	height: 200px;
+        	position: absolute;
+			left: 42%;
+			top: 50%;
+        }
+	</style>
+</head>
+<body class="body" style="background-image: url(4343.jpg); background-size: 100% 100%">
+	<div class="begin" >
+		<div  class="logo">
+			<img src="3898.png" alt="">
+		</div>
+		<div  class="letter">
+			<img src="43446.png" alt="">
+		</div>
+		<div class="maintext">
+		<h1><span><p>Ты зачислен в школу Чародейства и Волшебства! </p>
+			<p> Тебя ждет новая жизнь и новые приключения. </p>
+			<p>Давай начнем наше путешествие в мир волшебства))</p></span></h1>
+		</div>
+	</div>
+
+	<div class="main" style="display: none">
+		<div class="objects" style="position: absolute;">
+			<h2 class="maintext1">Атрибуты:</h2>
+		</div>
+		<div  class="logo">
+			<img src="3898.png" alt="">
+		</div>
+		<div  class="school">
+			<img src="2347.png" alt="">
+		</div>
+		<div  class="top"> 
+			<img src="4569.png" alt="">
+		</div>
+		<div  class="vokzal"> 
+			<img src="2349.png" alt="">
+		</div>
+		<div  class="tip"> 
+			<img src="4570.png" alt="">
+		</div>
+		<div  class="lavka"> 
+			<img src="2345.png" alt="">
+		</div>
+		<img src="34567.png" alt="" class="player">
+	</div>
+
+	<div class="location1" style="display: none">
+		<div class="loc1_game1">
+			<h1>Время: <span class="loc1time"></span></h1>
+			<h1>Счёт: <span class="loc1score"></span></h1>
+			<div class="loc1player">	
+			</div>
+			<div class="loc1message">
+				<h3><span class="loc1tx">Сколько времени нужно на изготовление Оборотного зелья?</span></h3>
+				<div style="padding-left: 20px;">
+					<input id="elem1" type="text" size="30"> 
+					<button class="btn" style="background-color: black;color: white; height: 30px; border-radius: 10px;">Ответить</button>
+				</div>
+			</div>
+			<div class="pal1">
+			</div>
+			<div class="textdivpal">
+				<h3><span class="maintext5"><p style="margin-bottom:0; margin-top: 0;">Виноградная лоза</p>
+				<p style="margin-bottom:0; margin-top: 0;">10¾ дюймов=27,5 см</p>
+				<p style="margin-bottom:0; margin-top: 0;">Сердечная жила дракона</p></span></h3>
+			</div>
+			<div class="pal2">
+			</div>
+			<div class="textdivpal2">
+				<h3><span class="maintext5"><p style="margin-bottom:0; margin-top: 0;">Береза</p>
+				<p style="margin-bottom:0; margin-top: 0;">8 дюймов=20,5 см</p>
+				<p style="margin-bottom:0; margin-top: 0;">Сердечная жила дракона</p></span></h3>
+			</div>
+			<div class="pal3">
+			</div>
+			<div class="textdivpal3">
+				<h3><span class="maintext5"><p style="margin-bottom:0; margin-top: 0;">Ясень</p>
+				<p style="margin-bottom:0; margin-top: 0;">12¼ дюймов=31 см</p>
+				<p style="margin-bottom:0; margin-top: 0;">Волос единорога</p></span></h3>
+			</div>
+			<div class="pal4">
+			</div>
+			<div class="textdivpal4">
+				<h3><span class="maintext5"><p style="margin-bottom:0; margin-top: 0;">Вишнёвое дерево</p>
+				<p style="margin-bottom:0; margin-top: 0;">13 дюймов=33 см</p>
+				<p style="margin-bottom:0; margin-top: 0;">Волос единорога</p></span></h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="location2" style="display: none">
+		<div class="loc2_game2">
+			<h1>Время: <span class="loc2time"></span></h1>
+			<h1>Счёт: <span class="loc2score"></span></h1>
+			<h1 class="loc2tx">Как пройти на платформу?</h1>
+			<div class="answer" style="display: none">
+				<div class="boxloc2 boxes"> 1 августа</div>
+				<div class="box2loc2 boxes"> 1 сентября</div>
+				<div class="box3loc2 boxes"> 31 августа </div>
+			</div>
+			<div class="loc2imges" style="display: flex;">
+			<div class="loc2img">
+				<img src="4.png" class="img1 img22">
+			</div>
+			<div class="loc2img2">
+				<img src="3.png" class="img2 img22">
+			</div>
+			<div class="loc2img3">
+				<img src="654.png" class="img3 img22">
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="location3" style="display: none">
+		<div class="loc3_game3">
+			<img src="pushok.png" class="loc3player">
+			<img src="door.png" class="door">
+			<img src="833.png" class="arpha">
+			<img src="lira.png" class="lira">
+			<img src="violon.png" class="violon">
+		</div>
+	</div>
+
+	<div class="location4" style="display: none">
+		<div class="loc4_game4">
+			<img src="11114.png" class="point1 mark1">
+		</div>
+	</div>
+
+	<div class="location41" style="display: none">
+		<div class="loc41_game41">
+			<div class="objects" style="position: absolute;">
+				<h2 class="maintext2">Атрибуты:</h2>
+				<img src="11114.png" class="img img9">
+			</div>
+			<img src="F.png" class="door1">
+		</div>
+	</div>
+
+	<div class="location5" style="display: none">
+		<div class="loc5_game5">
+			<img src="5433.png" class="mirror">
+			<img src="0000.png" class="lord">
+			<img src="1849.png" class="stone">
+		</div>
+	</div>
+
+	<div class="location6" style="display: none">
+		<div class="loc6_game6">
+			<div class="maintext4">
+			<h1><span><p>Поздравляю с окончанием учебного года!</p>
+			<p> Ты молодец через многое прошел.</p></span></h1>
+			</div>
+			<img src="778.png" class="gerb">
+		</div>
+	</div>
+
+	<div class="rule" style="display: none; transition: 1s;">
+		<div class="loc7_game7">
+			<img src="578.png" class="pr">
+			<div class="textdiv">
+			<h1><span class="maintext5"><p> Для начала учебного года тебе понадобится волшебная палочка.</p>
+			<p> Пройди опрос, и пусть палочка выберет тебя сама.</p></span></h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="rule2" style="display: none; transition: 1s;">
+		<div class="loc8_game8">
+			<img src="578.png" class="pr">
+			<div class="textdiv">
+			<h1><span class="maintext5"><p> Тебе необходимо попасть на платформу,но как? здесь стена.</p>
+			<p> Поспеши,поезд вот вот отъедет.</p></span></h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="rule3" style="display: none; transition: 1s;">
+		<div class="loc9_game9">
+			<img src="578.png" class="pr3">
+			<div class="textdiv3">
+			<h3><span class="maintext5"><p>Поздравляю, юный волшебник, ты учишься в факультете Гриффиндор.</p>
+			<p>Учебный год только начался, но тебя ждут новые приключения и тайны прошлого.</p>
+			<p>В школе происходят странные вещи.</p>
+			<p>И они связаны с твоим врагом из прошлого Лордом Волдемортом.</p>
+			<p>Помоги решить эту проблему и выясни, что здесь происходит.</p></span></h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="rule4" style="display: none; transition: 1s;">
+		<div class="loc91_game91">
+			<img src="666.png" class="pr4">
+			<div class="textdiv4">
+			<h2><span class="maintext5"><p>О! Предателем оказался профессор Квирелл,</p>
+			<p>благодаря ему Лорд Волдеморт пытается обрести силу.</p>
+			<p>Найди камень раньше его. И не допусти того,</p>
+			<p>что Волдеморт вновь обретет силу и вернется.</p></span></h2>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		let main = document.querySelector(".main");
+		let letter = document.querySelector(".letter");
+		let maintx = document.querySelector(".maintext");
+		let maintx2 = document.querySelector(".maintext2");
+		let maintx4 = document.querySelector(".maintext4");
+		let begin = document.querySelector(".begin");
+		let player = document.querySelector(".player");
+		let body = document.querySelector(".body");
+		let school = document.querySelector(".school");
+		let vokzal = document.querySelector(".vokzal");
+		let lavka = document.querySelector(".lavka");
+		let location1 = document.querySelector(".location1");
+		let loc1time = document.querySelector(".loc1time");
+		let loc1player = document.querySelector(".loc1player");
+		let loc1score = document.querySelector(".loc1score");
+		let loc1tx = document.querySelector(".loc1tx");
+		let pal1 = document.querySelector(".pal1");
+		let pal2 = document.querySelector(".pal2");
+		let pal3 = document.querySelector(".pal3");
+		let pal4 = document.querySelector(".pal4");
+		let btn = document.querySelector(".btn");
+		let location2 = document.querySelector(".location2");
+		let loc2time = document.querySelector(".loc2time");
+		let loc2tx = document.querySelector(".loc2tx");
+		let loc2score = document.querySelector(".loc2score");
+		let loc2img = document.querySelector(".loc2img");
+		let loc2imges = document.querySelector(".loc2imges");
+		let loc2img2 = document.querySelector(".loc2img2");
+		let loc2img3 = document.querySelector(".loc2img3");
+		let boxloc2 = document.querySelector(".boxloc2");
+		let box2loc2 = document.querySelector(".box2loc2");
+		let box3loc2 = document.querySelector(".box3loc2");
+		let img1 = document.querySelector(".img1");
+		let img2 = document.querySelector(".img2");
+		let img3 = document.querySelector(".img3");
+		let img9 = document.querySelector(".img9");
+		let location3 = document.querySelector(".location3");
+		let loc3player = document.querySelector(".loc3player");
+		let answer = document.querySelector(".answer");
+		let violon = document.querySelector(".violon");
+		let lira = document.querySelector(".lira");
+		let arpha = document.querySelector(".arpha");
+		let door = document.querySelector(".door");
+		let door1 = document.querySelector(".door1");
+		let location4 = document.querySelector(".location4");
+		let location41 = document.querySelector(".location41");
+		let point1 = document.querySelector(".point1");
+		let location5 = document.querySelector(".location5");
+		let mirror = document.querySelector(".mirror");
+		let stone = document.querySelector(".stone");
+		let lord = document.querySelector(".lord");
+		let location6 = document.querySelector(".location6");
+		let rule = document.querySelector(".rule");
+		let rule2 = document.querySelector(".rule2");
+		let rule3 = document.querySelector(".rule3");
+		let rule4 = document.querySelector(".rule4");
+		let pr = document.querySelector(".pr");
+		let maintx5 = document.querySelector(".maintext5");
+		let textdivpal = document.querySelector(".textdivpal");
+		let textdivpal2 = document.querySelector(".textdivpal2");
+		let textdivpal3 = document.querySelector(".textdivpal3");
+		let textdivpal4 = document.querySelector(".textdivpal4");
+
+
+		let box1 = function(){
+			letter.style.opacity = 0;
+			maintx.style.opacity = 1;
+		}
+		setTimeout(box1, 4000);
+
+		let box2 = function(){
+			maintx.style.opacity = 0;
+			begin.style.opacity = 0;
+		}
+		setTimeout(box2, 9000);
+
+		let box3 = function(){
+			begin.style.display = "none";
+			main.style.display = "block";
+			body.style.backgroundImage = "url(unnamed.jpg)";
+		}
+		setTimeout(box3, 10000);
+
+		lavka.onclick = function(){
+			player.style.top = 20 + "%";
+	        player.style.left = 20 + "%";
+	      	let rule1 = function(){
+	      		main.style.display = "none";
+	      		rule.style.display = "block";
+	      		body.style.backgroundImage = "url(43333.jpg)";
+	      	}
+	      	setTimeout(rule1, 1000);
+	      let changeLocation1 = function (){
+	       	rule.style.display = "none";
+	        location1.style.display = "block";
+	        body.style.backgroundImage = "url(45.jpg)";
+	        time = 40;
+	        loc1time.innerHTML = time;
+	        score = 0;
+	        loc1score.innerHTML = score;
+	        btn.onclick = function(){
+	        	let inpValue1 = document.getElementById('elem1').value
+	        	if (inpValue1=="Месяц") {
+	        	loc1tx.innerHTML = "Что делает заклинание Империус?";
+	        	score=score+3;
+	        	loc1score.innerHTML = score;
+	        	btn.onclick = function(){
+	        	let inpValue2 = document.getElementById('elem1').value
+	        	if (inpValue2=="Жертва становится полностью зависима от воли волшебника" || inpValue2=="Жертва становится зависимой") {
+	        	loc1tx.innerHTML = "Что такое Дары смерти?";
+	        	score=score+ 3;
+	        	loc1score.innerHTML = score;
+	        	btn.onclick = function(){
+	        	let inpValue3 = document.getElementById('elem1').value
+	        	if (inpValue3=="бузинная палочка,воскрешающий камень,мантия невидимка" || inpValue3=="воскрешающий камень,мантия невидимка,бузинная палочка" || inpValue3=="мантия невидимка,бузинная палочка,воскрешающий камень") {
+	        	score=score+ 3;
+	        	loc1score.innerHTML = score;
+	       		clearInterval(stop)
+	        	}}}}}
+	    }
+	    		let timer = function(){
+           	 		time=time - 1
+           	 		loc1time.innerHTML = time
+           	 		if (time==0 ) {
+           	 			clearInterval(stop)
+           	 		}
+           	 	if (time==0 && score==6) {
+	        		pal2.style.opacity = "0";
+	        		pal3.style.opacity = "0";
+	        		pal4.style.opacity = "0";
+	        		pal1.style.left = 45+"%";
+	        		textdivpal.style.opacity = 1;
+	        		let end1 = function(){
+	        		main.style.display = "block";
+	            	location1.style.display = "none";
+	            	body.style.backgroundImage = "url(unnamed.jpg)";
+	            	let img1 = document.createElement('img');
+	            	let objects = document.querySelector(".objects");
+					objects.appendChild(img1);
+					img1.src = '00.png';
+					img1.classList.add('img');
+	        	}
+	        	setTimeout(end1, 3000);
+	        	}
+	        	if (time==0 && score==3) {
+	        		pal2.style.opacity = "0";
+	        		pal3.style.opacity = "0";
+	        		pal1.style.opacity = "0";
+	        		pal4.style.left = 45+"%";
+	        		textdivpal4.style.opacity = 1;
+	        		let end2 = function(){
+	        		main.style.display = "block";
+	            	location1.style.display = "none";
+	            	body.style.backgroundImage = "url(unnamed.jpg)";
+	            	let img2 = document.createElement('img');
+	            	let objects = document.querySelector(".objects");
+					objects.appendChild(img2);
+					img2.src = '95.png';
+					img2.classList.add('img');
+	        	}
+	        	setTimeout(end2, 3000);
+	        	}
+	        	if (time==0 && score==9) {
+	        		pal2.style.opacity = "0";
+	        		pal1.style.opacity = "0";
+	        		pal4.style.opacity = "0";
+	        		pal3.style.left = 45+"%";
+	        		textdivpal3.style.opacity = 1;
+	        		let end3 = function(){
+	        		main.style.display = "block";
+	            	location1.style.display = "none";
+	            	body.style.backgroundImage = "url(unnamed.jpg)";
+	            	let img3 = document.createElement('img');
+	            	let objects = document.querySelector(".objects");
+					objects.appendChild(img3);
+					img3.src = '34.png';
+					img3.classList.add('img');
+	        	}
+	        	setTimeout(end3, 3000);
+	        	}
+	        	if (time==0 && score==0) {
+	        		pal1.style.opacity = "0";
+	        		pal3.style.opacity = "0";
+	        		pal4.style.opacity = "0";
+	        		pal2.style.left = 45+"%";
+	        		textdivpal2.style.opacity = 1;
+	        		let end4 = function(){
+	        		main.style.display = "block";
+	            	location1.style.display = "none";
+	            	body.style.backgroundImage = "url(unnamed.jpg)";
+	            	let img4 = document.createElement('img');
+	            	let objects = document.querySelector(".objects");
+					objects.appendChild(img4);
+					img4.src = '12.png';
+					img4.classList.add('img');
+	        	}
+	        	setTimeout(end4, 3000);
+	        	}
+	        }
+           	 	let stop = setInterval(timer, 1000)
+	       }
+	       setTimeout(changeLocation1, 7000)
+
+	        vokzal.onclick = function(){
+	       	player.style.top = 60 + "%";
+	        player.style.left = 33 + "%";
+	        let rule12 = function(){
+	      		main.style.display = "none";
+	      		rule2.style.display = "block";
+	      		body.style.backgroundImage = "url(kk.jpg)";
+	      	}
+	      	setTimeout(rule12, 1000);
+	        let changeLocation2 = function (){
+	        rule2.style.display = "none";
+	        location2.style.display = "block";
+	        body.style.backgroundImage = "url(7.jpg)";
+	        time2 = 20;
+	        loc2time.innerHTML = time2;
+	        score2 = 0;
+	        loc2score.innerHTML = score2;
+	        loc2img.onclick = function(){
+	        	score2=score2+3;
+	        	loc2score.innerHTML = score2;
+	        	loc2imges.style.display = "none";
+	        	answer.style.display = "block";
+	        	loc2tx.innerHTML = "Какого числа Хогвартс экспресс отправляется из Кингс-Кросс в Хогвартс?"
+	        	boxloc2.onclick = function(){
+	        	alert("Wrong");
+	        	score2=score2-1;
+	        	loc2score.innerHTML = score2;
+				box2loc2.onclick = function(){
+				alert("Right");
+				score2=score2+3;
+				loc2score.innerHTML = score2;
+				loc2tx.innerHTML = "Какого числа день рождения у Гарри Поттера?";
+				boxloc2.innerHTML = "31 июля";
+				box2loc2.innerHTML = "1 августа";
+				box3loc2.innerHTML = "31 июня";
+
+				box2loc2.onclick = function(){
+				alert("Wrong");
+				score2=score2-1;
+	        	loc2score.innerHTML = score2;}
+
+				boxloc2.onclick = function(){
+				alert("Right");
+				score2=score2+3;
+				loc2score.innerHTML = score2;
+				loc2tx.innerHTML = "Как звали основателей Хогвартса?";
+				boxloc2.innerHTML = "Годрик,Хелена,Ровена,Лазарев";
+				box2loc2.innerHTML = "Годрик,Хельга,Ровена,Салазар";
+				box3loc2.innerHTML = "Гаррик,Хельга,Ромона,Салазар";
+				boxloc2.onclick = function(){
+				alert("Wrong");
+				score2=score2-1;
+	        	loc2score.innerHTML = score2;}
+
+				box2loc2.onclick = function(){
+				alert("Right");
+				score2=score2+3;
+				loc2score.innerHTML = score2;
+	        	if (time2>=0 && score2>=8) {
+	        		alert("Молодец! Ты прошел и успел на поезд!")
+	        		main.style.display = "block";
+	            	location2.style.display = "none";
+	            	body.style.backgroundImage = "url(unnamed.jpg)";
+	        	}
+				
+					}}}}
+
+				box3loc2.onclick = function(){
+					alert("Wrong");
+					score2=score2-1;
+		        	loc2score.innerHTML = score2;}
+		        }
+		        let timer2 = function(){
+           	 		time2=time2 - 1
+           	 		loc2time.innerHTML = time2
+           	 		if (time2==0) {
+           	 			clearInterval(stop2)
+           	 		}
+           	 	}
+	        	let stop2 = setInterval(timer2, 1000)
+	        loc2img2.onclick = function(){
+	        	alert("Неправильно!Откуда ты возмешь летающую машину??")
+	        	score2=score2-2;
+	        	loc2score.innerHTML = score2;
+
+	        }
+	        loc2img3.onclick = function(){
+	        	alert("Неправильно!Магия здесь не поможет))")
+	        	score2=score2-2;
+	        	loc2score.innerHTML = score2;
+	        }
+	       }
+	   	setTimeout(changeLocation2, 7000)
+	}
+			school.onclick = function(){
+	       	player.style.top = 25 + "%";
+	        player.style.left = 65 + "%";
+	          let rule13 = function(){
+	      		main.style.display = "none";
+	      		rule3.style.display = "block";
+	      		body.style.backgroundImage = "url(44333.jpg)";
+	      	}
+	      	setTimeout(rule13, 1000);
+	        let changeLocation3 = function (){
+	        rule3.style.display = "none";
+	        location3.style.display = "block";
+	        body.style.backgroundImage = "url(84883423.jpg)";
+	        alert("Пройди мимо трехголового пса. Он что-то охраняет.")
+	        alert("Найди подходящий музыкальный инструмент, который поможет успокоить Пушка.")
+	        let randomLeft = function(){
+                let rand = Math.random() * 90;
+                let round = Math.round(rand);
+                return round;
+            }
+
+            let randomTop = function(){
+                let rand = Math.random() * 75;
+                let round = Math.round(rand);
+                return round;
+            }
+            let createPoint = function() {
+            loc3player.style.left = randomLeft() + "%"
+            loc3player.style.top = randomTop() + "%"
+        	} 
+        	 setTimeout(createPoint, 1000)
+        	 let time13 = setInterval(createPoint , 500)
+
+        	lira.onclick = function(){
+        		alert("Неправильно, лира не поможет.")
+        	}
+        	violon.onclick = function(){
+        		alert("Неправильно, виолончель не поможет.")
+        	}
+        	arpha.onclick = function(){
+        		alert("Поздравляю, пес уснул. Теперь осторожно пройди к двери.)")
+        		loc3player.style.left = 35 + "%"
+            	loc3player.style.top = 50 + "%"
+        		clearInterval(time13)
+        		loc3player.src= "25.png";
+        		door.onclick = function(){
+        			location3.style.display = "none";
+			        location4.style.display = "block";
+			        body.style.backgroundImage = "url(3.jpg)";
+			        alert("ОГО! Здесь так много ключей. Поймай один правильный ключ.")
+
+				       let randomLeft1 = function(){
+		                let rand1 = Math.random() * 90;
+		                let round1 = Math.round(rand1);
+		                return round1;
+			            }
+			            let randomTop1 = function(){
+			                let rand1 = Math.random() * 75;
+			                let round1 = Math.round(rand1);
+			                return round1;
+			   			}
+				        let createPoint2 = function() {
+				            let point = document.createElement('img');
+				            location4.appendChild(point);
+				            point.src = "11113.png" ;
+				            point.classList.add("mark11")
+				            point.style.left = randomLeft1() + "%"
+				            point.style.top = randomTop1() + "%"
+        				} 
+        				setTimeout(createPoint2, 1000)
+        	 			let time14 = setInterval(createPoint2 , 500)
+
+				        let createPoint3 = function() {
+				            point1.style.left = randomLeft1() + "%"
+				            point1.style.top = randomTop1() + "%"
+				           
+        				} 
+        				point1.onclick = function(){
+        	 					alert("Вау! Ты нашел ключ. Теперь найди ему применение.")
+        	 					clearInterval(time14);
+        	 					location4.style.display = "none";
+						        location41.style.display = "block";
+						        body.style.backgroundImage = "url(3.jpg)";
+						        maintext2.style.color = "white";
+						        alert("Открой дверь")
+        	 				
+        	 			}
+        				setTimeout(createPoint3, 1000)
+        	 			let time145 = setInterval(createPoint3 , 1000)
+        	 			door1.onclick = function(){
+        	 				img9.style.display = "none";
+        	 				let rule14 = function(){
+					      		location41.style.display = "none";
+					      		rule4.style.display = "block";
+					      		body.style.backgroundImage = "url(original.jpg)";
+					      	}
+					      	setTimeout(rule14, 1000);
+        	 				let changeLocation4 = function (){
+        	 				rule4.style.display = "none";
+						    location5.style.display = "block";
+						    body.style.backgroundImage = "url(876.jpg)";
+							}
+						    setTimeout(changeLocation4, 5000)
+						    mirror.onclick = function(){
+						    	stone.style.opacity = "1";
+						    }
+						    stone.onclick = function(){
+						    	alert("Молодец! Ты нашел камень, враг побежден!")
+						    	lord.src = "866.png"
+								let finish = function(){
+									location5.style.display = "none";
+								    location6.style.display = "block";
+								    body.style.backgroundImage = "url(43333.jpg)";
+								}
+								setTimeout(finish, 1000)
+						    }
+        	 			}
+        	 			
+		        	}
+        	}
+	       }
+
+	   	setTimeout(changeLocation3, 7000)
+	   		}
+	   	}
+
+	    
+	</script>
+</body>
+</html>
